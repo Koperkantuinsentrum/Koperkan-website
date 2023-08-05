@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="af">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koperkantuinsentrum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #447f6c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #hero {
+            background-image: url('https://th.bing.com/th/id/OIG.CF6J9ncNkVNbBeZSfR_S?w=173&h=173&c=6&r=0&o=5&pid=ImgGn');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #447f6c;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #products {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .products-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .product {
+            flex: 0 0 30%;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #447f6c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer .contact-us {
+            padding-top: 1rem;
+        }
+
+        /* Add arrows for horizontal scrolling on PC */
+        .arrow-left,
+        .arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #447f6c;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        /* Hide arrows on mobile devices */
+        @media (max-width: 768px) {
+            header {
+                padding: 0.5rem 0;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav li {
+                margin-right: 0.5rem;
+            }
+
+            .hero-content {
+                padding: 2rem;
+            }
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+            }
+
+            #products {
+                padding: 2rem 0;
+            }
+
+            footer .contact-us {
+                padding-top: 0.5rem;
+            }
+
+            .product {
+                flex: 0 0 45%;
+            }
+
+            /* Hide arrows on mobile devices */
+            .arrow-left,
+            .arrow-right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Koperkantuinsentrum</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="produkte.html">Produkte</a></li>
+                <li><a href="kontakons.html">Kontak Ons</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Welkom by Koperkantuinsentrum</h2>
+            <p>Koop die pragtigste plante vir jou tuin. Ons het 'n wye verskeidenheid blomme, struike en bome om
+                jou tuin te laat blom!</p>
+            <a href="#" class="btn">Koop Nou</a>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Ons Produkte</h2>
+        <div class="products-container">
+            <div class="product">
+                <img src="https://th.bing.com/th/id/OIG.VAI9JpcKJMRmlx7VPhmV?w=173&h=173&c=6&r=0&o=5&pid=ImgGn"
+                    alt="Fern">
+                <h3>Fern</h3>
+                <p>Description of the Fern product.</p>
+            </div>
+            <div class="product">
+                <img src="https://th.bing.com/th/id/OIG.S0C7MVwFYW5clEhZzuda?w=173&h=173&c=6&r=0&o=5&pid=ImgGn">
+                <h3>Roos</h3>
+                <p>Description of the second product.</p>
+            </div>
+            <div class="product">
+                <img src="https://th.bing.com/th/id/OIG.lbRbsDMHu_K5osRDxoLC?w=173&h=173&c=6&r=0&o=5&pid=ImgGn">
+                <h3>Tulp</h3>
+                <p>Description of the Tulp product.</p>
+            </div>
+            <div class="product">
+                <img src="https://th.bing.com/th/id/OIG.5zVUS8Gx_MhQCbzKoIWN?w=173&h=173&c=6&r=0&o=5&pid=ImgGn">
+                <h3>Viooltjie</h3>
+                <p>Description of the Viooltjie product.</p>
+            </div>
+            <!-- Add other products here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2023 Koperkantuinsentrum. Alle Regte Voorbehou.
+        </div>
+        <div class="contact-us">
+            Kontak Ons: Tel: 012-345-6789 | E-pos: info@koperkantuinsentrum.co.za
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript code for horizontal scrolling on PC
+        const productsContainer = document.querySelector('.products-container');
+        const productItems = document.querySelectorAll('.product');
+        const arrowLeft = document.createElement('div');
+        const arrowRight = document.createElement('div');
+        arrowLeft.classList.add('arrow-left');
+        arrowRight.classList.add('arrow-right');
+        arrowLeft.innerHTML = "&lt;"; // Unicode code for left-pointing arrow
+        arrowRight.innerHTML = "&gt;"; // Unicode code for right-pointing arrow
+        let scrollStep = productItems[0].offsetWidth + parseInt(getComputedStyle(productItems[0]).marginLeft) * 2;
+        let currentIndex = 0;
+        const totalProducts = productItems.length;
+        const maxIndex = totalProducts - 1;
+
+        productsContainer.appendChild(arrowLeft);
+        productsContainer.appendChild(arrowRight);
+
+        arrowLeft.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalProducts) % totalProducts;
+            productsContainer.style.transform = `translateX(-${currentIndex * scrollStep}px)`;
+        });
+
+        arrowRight.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalProducts;
+            productsContainer.style.transform = `translateX(-${currentIndex * scrollStep}px)`;
+        });
+    </script>
+</body>
+
+</html>

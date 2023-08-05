@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="af">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koperkantuinsentrum - Produkte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #447f6c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #products {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .search-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .search-filter input[type="text"],
+        .search-filter select {
+            padding: 0.5rem;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0.5rem;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .search-filter select {
+            max-width: 150px;
+        }
+
+        .search-filter button {
+            background-color: #447f6c;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            height: 38px; /* Adjust the button height here */
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product {
+            flex: 0 0 45%;
+            margin: 1rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            max-width: 250px; /* Limit the width of the product card */
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #447f6c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer .contact-us {
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .search-filter {
+                flex-direction: column;
+            }
+
+            .search-filter input[type="text"],
+            .search-filter select {
+                margin: 0.5rem auto;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .product {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Koperkantuinsentrum</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Produkte.html">Produkte</a></li>
+                <li><a href="kontak-ons.html">Kontak Ons</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Ons Produkte</h2>
+        <div class="search-filter">
+            <input type="text" id="search" placeholder="Soek vir plante...">
+            <select id="season">
+                <option value="">Alle Seisoene</option>
+                <option value="Somer">Somer</option>
+                <option value="Winter">Winter</option>
+                <option value="Herfs">Herfs</option>
+                <option value="Lente">Lente</option>
+            </select>
+            <button id="searchBtn">Soek</button>
+        </div>
+        <div class="products-container" id="productsContainer">
+            <!-- Product cards will be dynamically generated here -->
+        </div>
+        <p id="noResults" style="display: none; text-align: center;">Geen produk gevind nie.</p>
+    </section>
+
+    <footer>
+        <div class="contact-us">
+            Kontak Ons: Tel: 012-345-6789 | E-pos: info@koperkantuinsentrum.co.za
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript code for search and filter
+        const searchInput = document.getElementById('search');
+        const seasonSelect = document.getElementById('season');
+        const productsContainer = document.getElementById('productsContainer');
+        const searchButton = document.getElementById('searchBtn');
+        const noResultsMessage = document.getElementById('noResults');
+
+        const products = [
+          { name: "Roos", season: "Somer", maxHeight: "60cm", image: "https://th.bing.com/th/id/OIG.S0C7MVwFYW5clEhZzuda?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Tulip", season: "Lente", maxHeight: "45cm", image: "https://th.bing.com/th/id/OIG.lbRbsDMHu_K5osRDxoLC?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Viooltjie", season: "Lente", maxHeight: "15cm", image: "https://th.bing.com/th/id/OIG.5zVUS8Gx_MhQCbzKoIWN?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Sonblom", season: "Somer", maxHeight: "120cm", image: "https://th.bing.com/th/id/OIG.r.KxCims7auhtsmSyVOW?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Kruie", season: "Alle Seisoene", maxHeight: "Varieer", image: "https://th.bing.com/th/id/OIG.OeBJlT7O5WmSXu2oh8ko?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Lelies", season: "Lente", maxHeight: "150cm", image: "https://th.bing.com/th/id/OIG.On7gsNfKRea4nJhVYQHT?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Daisy", season: "Lente", maxHeight: "25cm", image: "https://th.bing.com/th/id/OIG.4Qe1a6RvJlZXYm2.r.l_?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Camellia", season: "Winter", maxHeight: "300cm", image: "https://th.bing.com/th/id/OIG.DkRvPOgCOuTQ4BWjE0ot?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Chrysanthemum", season: "Herfs", maxHeight: "90cm", image: "https://th.bing.com/th/id/OIG.3GXvOyi7Agbu6JY7NRVp?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Orchid", season: "Alle Seisoene", maxHeight: "30cm", image: "https://th.bing.com/th/id/OIG.0yBH6RNuOdau8HlbmCph?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Laventel", season: "Somer", maxHeight: "60cm", image: "https://th.bing.com/th/id/OIG.Av3DdmizsHFDYHcuRA0a?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Afrikanertjie", season: "Somer", maxHeight: "40cm", image: "https://th.bing.com/th/id/OIG.xZGOZiLy__fxV4lQk7jY?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Denneblom", season: "Winter", maxHeight: "20cm", image: "https://th.bing.com/th/id/OIG.r19ozsTQCV2cyY8Mrs4X?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+{ name: "Geranium", season: "Somer", maxHeight: "80cm", image: "https://th.bing.com/th/id/OIG.q_0BxUbxjUiyl7854r5t?w=173&h=173&c=6&r=0&o=5&pid=ImgGn" },
+
+
+            // Add more products here
+        ];
+
+        // Function to update the displayed products based on the search and filter options
+        function updateProducts() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedSeason = seasonSelect.value;
+
+            const filteredProducts = products.filter(product => {
+                // Add your filter conditions here
+                const nameMatches = product.name.toLowerCase().includes(searchTerm);
+                const seasonMatches = selectedSeason === '' || product.season === selectedSeason;
+
+                return nameMatches && seasonMatches;
+            });
+
+            displayProducts(filteredProducts);
+        }
+
+        // Function to display the products in the container
+        function displayProducts(products) {
+            if (products.length === 0) {
+                noResultsMessage.style.display = 'block';
+                productsContainer.innerHTML = '';
+            } else {
+                noResultsMessage.style.display = 'none';
+                productsContainer.innerHTML = '';
+                products.forEach(product => {
+                    // Create HTML elements for each product card and append them to the container
+                    const productCard = document.createElement('div');
+                    productCard.classList.add('product');
+                    productCard.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <div class="product-info">
+                            <p>Seisoen: ${product.season}</p>
+                            <p>Max Hoogte: ${product.maxHeight}</p>
+                        </div>
+                    `;
+                    productsContainer.appendChild(productCard);
+                });
+            }
+        }
+
+        // Event listener for search button click
+        searchButton.addEventListener('click', updateProducts);
+
+        // Initial display of products (optional, if you have some default products)
+        displayProducts(products);
+    </script>
+</body>
+
+</html>

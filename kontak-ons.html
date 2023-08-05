@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="af">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koperkantuinsentrum - Kontak Ons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #447f6c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #contact {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-content h2 {
+            color: #447f6c;
+        }
+
+        .contact-content p {
+            color: #666;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        form div {
+            flex: 1 1 100%;
+            margin: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            background-color: #447f6c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #385f50;
+        }
+
+        footer {
+            background-color: #447f6c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer .contact-us {
+            padding-top: 1rem;
+        }
+
+        /* Hide arrows on mobile devices */
+        @media (max-width: 768px) {
+            header {
+                padding: 0.5rem 0;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav li {
+                margin-right: 0.5rem;
+            }
+
+            .contact-content {
+                padding: 2rem;
+            }
+
+            footer .contact-us {
+                padding-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Koperkantuinsentrum</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="produkte.html">Produkte</a></li>
+                <li><a href="kontakons.html">Kontak Ons</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <div class="contact-content">
+            <h2>Kontak Ons</h2>
+            <p>Ons hoor graag van jou! Vul die vorm in en ons sal binne 24 uur met jou kontak maak.</p>
+            <form>
+                <div>
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">E-pos:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div style="flex: 1 1 100%;">
+                    <label for="message">Boodskap:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Stuur</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact-us">
+            Kontak Ons: Tel: 012-345-6789 | E-pos: info@koperkantuinsentrum.co.za
+        </div>
+        <div class="copyright">
+            &copy; 2023 Koperkantuinsentrum. Alle Regte Voorbehou.
+        </div>
+    </footer>
+</body>
+
+</html>
